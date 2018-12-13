@@ -17,7 +17,7 @@
     {{#each results}}
       <div class="recipe">
           <p class="title"><a href="{{href}}">{{title}}</a></p>
-          <img src = "{{thumbnail}}">
+          <img onclick=firstIng() src = "{{thumbnail}}">
           <ul class ="ingredients">
               {{#each ingredients}}
               <li class="ingredient">{{this}}</li>

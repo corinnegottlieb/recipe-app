@@ -1,12 +1,4 @@
 
-// const source = $(`#recipe-template`).html()
-// const template = Handlebars.compile(source)
-
-// const render = function(results){
-//     $(`#search-results`).empty()
-//     let newHTML = template({results})
-//     $(`#search-results`).append(newHTML)
-// }
 
 const renderer = new Renderer()
 
@@ -15,5 +7,11 @@ const fetch = function(){
 $.get(`/recipes/${input}`, function(response){
     renderer.render(response)
 })
+}
+
+const firstIng = function(){
+let firstIngredient = $(this).siblings(".ingredients").children().first()
+console.log(firstIngredient)
+
 }
 
