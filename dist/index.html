@@ -8,8 +8,24 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
 <body>
-<div id ="search-container"
-
+<div id ="search-container">
+    <input id="input" type="text" placeholder="Search recipe">
+    <button onclick=fetch()>Search</button>
+</div>
+<div id="search-results"></div>
+<script id="recipe-template" type="text/x-handlebars-template">
+    {{#each results}}
+      <div class="recipe">
+          <p class="title"><a href="{{href}}">{{title}}</a></p>
+          <img src = "{{thumbnail}}">
+          <ul class ="ingredients">
+              {{#each ingredients}}
+              <li class="ingredient">{{this}}</li>
+              {{/each}}
+          </ul>
+      </div>
+      {{/each}}
+   </script>
         <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="main.js"></script>
