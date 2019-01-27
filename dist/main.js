@@ -4,14 +4,16 @@ const renderer = new Renderer()
 
 const fetch = function(){
     let input = $(`#input`).val()
-$.get(`/recipes/${input}`, function(response){
+    let ingredients = $(`#ingredient-search`).val()
+$.get(`/recipes/${input}/?ing=${ingredients}`, function(response){
     renderer.render(response)
 })
 }
 
-const firstIng = function(){
-let firstIngredient = $(this).siblings(".ingredients").children().first()
-console.log(firstIngredient)
 
-}
+$(`#search-results`).on(`click`, `img`, function(){
+let firstIngredient = $(this).siblings(`ul`).children().first().text()
+// let firstIngredient = $(this).closest(`.recipe`).find(`li`).first().text()
+console.log(firstIngredient)
+})
 

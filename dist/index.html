@@ -10,14 +10,16 @@
 <body>
 <div id ="search-container">
     <input id="input" type="text" placeholder="Search recipe">
+    <input id="ingredient-search" type="text" placeholder="Search ingredients">
     <button onclick=fetch()>Search</button>
 </div>
 <div id="search-results"></div>
 <script id="recipe-template" type="text/x-handlebars-template">
     {{#each results}}
       <div class="recipe">
-          <p class="title"><a href="{{href}}">{{title}}</a></p>
-          <img onclick=firstIng() src = "{{thumbnail}}">
+          <h4 class="title"><a href="{{href}}">{{title}}</a></h4>
+          <img src = "{{thumbnail}}">
+          <p>Ingredients</p>
           <ul class ="ingredients">
               {{#each ingredients}}
               <li class="ingredient">{{this}}</li>

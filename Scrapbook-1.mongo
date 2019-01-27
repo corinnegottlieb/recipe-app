@@ -1,0 +1,126 @@
+// db.firstCollection.find({
+//     name: "Milo"
+// })
+
+// db.firstCollection.find({
+//     salary:{
+//         $gt: 1200
+//     }
+// })
+
+// db.firstCollection.find(
+//     {name: "Razu"},
+//     {"hometown.city": 1,
+//         _id: 0}
+
+// )
+// db.firstCollection.update(
+//     {
+//         name: "Milo"
+//     },
+//     {
+//         $set:
+//             {
+//                 lastName: "Shakers"
+//             }
+//     }
+// )
+
+// db.firstCollection.update(
+// {
+//     name: "Loreli"
+//     },
+// {
+//     $set: {
+//         salary: 1050
+//     }
+// }
+
+// )
+
+// db.firstCollection.find(
+// {
+//     name: "Loreli"
+// })
+
+// db.firstCollection.remove(
+// {name: "Rayna"},
+// true
+// )
+
+
+// db.firstCollection.update(
+// {name: "Razu"},
+// {$push: {
+//     hobbies: "Razu-ball"
+// }})
+
+// db.firstCollection.find(
+// {name:"Razu"})
+
+// db.firstCollection.update(
+// {name: "Soren"},
+// {$set: {dreams: []
+// }}
+// )
+
+// db.firstCollection.update(
+//  {name: "Soren"},
+//  {$push: {
+//     dreams: {
+//         $each: ["Being like Razu", "Breaking the glass floor"]
+// }}}
+// )
+
+
+// db.firstCollection.update(
+// {name: "Soren"},
+// {$pull: {
+//     dreams: "Being like Razu"
+// }}
+// )
+
+
+// db.firstCollection.insert({name: "Spore", hobbies: ["Running", "Hip Hop", "Basketball", "Soccer"]})
+// db.firstCollection.insert({name: "Daniel", hobbies: ["Hip Hop", "Ballet", "Salsa", "Running"]})
+// db.firstCollection.insert({name: "Beckie", hobbies: ["Reading", "Running", "Hip Hop", "Writing", "Debate", "Philosophy"]})
+// db.firstCollection.insert({name: "Dugg", hobbies: ["Philosophy", "Psychology"]})
+
+// db.firstCollection.find({
+//     hobbies: "Philosophy"
+// })
+
+// db.firsCollection.remove({})
+// db.firstCollection.insert({ name: "Louise", dept: "Finance", salary: 1200 })
+// db.firstCollection.insert({ name: "Rayna", dept: "R&D", salary: 2300 })
+// db.firstCollection.insert({ name: "Soren", dept: "Finance", salary: 1500 })
+// db.firstCollection.insert({ name: "Loreli", dept: "Sales", salary: 800 })
+// db.firstCollection.insert({ name: "Milo", dept: "Sales", salary: 950 })
+// db.firstCollection.insert({ name: "Brendon", dept: "Finance", salary: 1100 })
+
+// db.firstCollection.aggregate([
+//     {$group:
+//     {_id: "$dept",
+//     totalSalaries: {$sum: "$salary"}}}
+// ]
+// )
+
+// db.firstCollection.aggregate([
+//                      { $group: 
+//                         { _id: "$dept", 
+//                         totalSalaries: { $sum: 1 } } }
+//                    ])
+
+// db.firstCollection.remove({})
+
+// db.firstCollection.insert({ name: "Louise", dept: "Finance", salary: 1200, currentEmployee: true})
+// db.firstCollection.insert({ name: "Rayna", dept: "R&D", salary: 2300, currentEmployee: true })
+// db.firstCollection.insert({ name: "Soren", dept: "Finance", salary: 1500, currentEmployee: false })
+// db.firstCollection.insert({ name: "Loreli", dept: "Sales", salary: 800, currentEmployee: false })
+// db.firstCollection.insert({ name: "Milo", dept: "Sales", salary: 950, currentEmployee: true })
+// db.firstCollection.insert({ name: "Brendon", dept: "Finance", salary: 1100, currentEmployee: false })
+
+
+// db.firstCollection.aggregate([
+//     { $match: {currentEmployee: true}},
+// ])
